@@ -16,15 +16,17 @@ source:
 build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - {{ PYTHON }} -m pip install . -vv
-  number: 0
+    - {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 1
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    # Package originally wants matruin ~=1.6.0, but that's not available for windows on conda-forge
+    - maturin ~=1.7.0                        # [build_platform != target_platform and not linux]
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
@@ -43,7 +45,7 @@ test:
     - pip
   commands:
     - pip check
-    - python -c "import neo4j._codec.packstream; assert(neo4j._codec.packstream.RUST_AVAILABLE is True)"
+    - python -c "import neo4j._codec.packstream; assert neo4j._codec.packstream.RUST_AVAILABLE is True"
 
 about:
   home: https://neo4j.com/
