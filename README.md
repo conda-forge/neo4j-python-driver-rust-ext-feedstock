@@ -11,7 +11,7 @@ Summary: Rust Extensions for a Faster Neo4j Bolt Driver for Python
 
 Development: https://github.com/neo4j/neo4j-python-driver-rust-ext
 
-Documentation: https://neo4j.com/docs/api/python-driver/5.26/
+Documentation: https://neo4j.com/docs/api/python-driver/5.27/
 
 Current build status
 ====================
