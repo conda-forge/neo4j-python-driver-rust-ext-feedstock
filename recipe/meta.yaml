@@ -34,7 +34,7 @@ requirements:
   host:
     - python
     - pip
-    # Package originally wants matruin ~=1.6.0, but that's not available for windows on conda-forge
+    # Package originally wants maturin ~=1.6.0, but that's not available for windows on conda-forge
     - maturin ~=1.7.0
   run:
     - python
