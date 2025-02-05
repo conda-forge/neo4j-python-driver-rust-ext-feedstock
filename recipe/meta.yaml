@@ -1,6 +1,6 @@
 {% set pypi_name = "neo4j-rust-ext" %}
 {% set name = "neo4j-python-driver-rust-ext" %}
-{% set version = "5.27.0.0" %}
+{% set version = "5.28.0.0" %}
 
 {% set driver_target_version = ".".join(version.split(".")[:3]) %}
 {% set docs_version = ".".join(version.split(".")[:2]) %}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name | replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: ef6a62db24a222994e1582af4e1e4f3745f5e03d1e3cdd6b7027d6e975cd0018
+  sha256: e7353616e98bfca61556f7e7909837930b62fd82846955e1cf220031f86ec4d2
 
 build:
   script:
@@ -34,7 +34,7 @@ requirements:
   host:
     - python
     - pip
-    # Package originally wants matruin ~=1.6.0, but that's not available for windows on conda-forge
+    # Package originally wants maturin ~=1.6.0, but that's not available for windows on conda-forge
     - maturin ~=1.7.0
   run:
     - python
