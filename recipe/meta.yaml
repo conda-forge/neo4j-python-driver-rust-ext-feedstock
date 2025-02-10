@@ -1,6 +1,6 @@
 {% set pypi_name = "neo4j-rust-ext" %}
 {% set name = "neo4j-python-driver-rust-ext" %}
-{% set version = "5.28.0.0" %}
+{% set version = "5.28.1.0" %}
 
 {% set driver_target_version = ".".join(version.split(".")[:3]) %}
 {% set docs_version = ".".join(version.split(".")[:2]) %}
@@ -11,14 +11,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name | replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: e7353616e98bfca61556f7e7909837930b62fd82846955e1cf220031f86ec4d2
+  sha256: cdc3ab18b1f6a292027c3774d67a8874c8cc3623e30a8a2eb1321231bee0966e
 
 build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv --no-deps
   number: 0
-  skip: true                                 # [python_impl == 'pypy' or py < 37 or py > 312]
+  skip: true  # [python_impl == 'pypy' or py < 37 or py > 312]
 
 requirements:
   build:
@@ -53,7 +53,7 @@ about:
   summary: Rust Extensions for a Faster Neo4j Bolt Driver for Python
   license: Apache-2.0
   license_family: Apache
-  license_file: 
+  license_file:
     - LICENSE.txt
     - THIRDPARTY.yml
   doc_url: https://neo4j.com/docs/api/python-driver/{{ docs_version }}/
