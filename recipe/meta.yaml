@@ -1,6 +1,6 @@
 {% set pypi_name = "neo4j-rust-ext" %}
 {% set name = "neo4j-python-driver-rust-ext" %}
-{% set version = "5.28.0.0" %}
+{% set version = "5.28.1.0" %}
 
 {% set driver_target_version = ".".join(version.split(".")[:3]) %}
 {% set docs_version = ".".join(version.split(".")[:2]) %}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name | replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: e7353616e98bfca61556f7e7909837930b62fd82846955e1cf220031f86ec4d2
+  sha256: cdc3ab18b1f6a292027c3774d67a8874c8cc3623e30a8a2eb1321231bee0966e
 
 build:
   script:
