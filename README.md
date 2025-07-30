@@ -245,6 +245,3 @@ Feedstock Maintainers
 
 * [@robsdedude](https://github.com/robsdedude/)
 
-
-<!-- dummy commit to enable rerendering -->
-
