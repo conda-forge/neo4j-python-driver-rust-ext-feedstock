@@ -35,7 +35,7 @@ requirements:
     - python
     - pip
     # Package originally wants maturin ~=1.6.0, but that's not available for windows on conda-forge
-    - maturin ~=1.7.0
+    - maturin ~=1.9.1
   run:
     - python
     - neo4j-python-driver =={{ driver_target_version }}
