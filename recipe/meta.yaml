@@ -51,10 +51,11 @@ test:
 about:
   home: https://neo4j.com/
   summary: Rust Extensions for a Faster Neo4j Bolt Driver for Python
-  license: Apache-2.0
-  license_family: Apache
+  license: Apache-2.0 AND MIT
   license_file:
     - LICENSE.txt
+    - LICENSE.MIT.txt
+    - LICENSE.APACHE2.txt
     - THIRDPARTY.yml
   doc_url: https://neo4j.com/docs/api/python-driver/{{ docs_version }}/
   dev_url: https://github.com/neo4j/neo4j-python-driver-rust-ext
