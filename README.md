@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/neo4j-python-dr
 
 Home: https://neo4j.com/
 
-Package license: Apache-2.0
+Package license: Apache-2.0 AND MIT
 
 Summary: Rust Extensions for a Faster Neo4j Bolt Driver for Python
 

@@ -1,6 +1,6 @@
 {% set pypi_name = "neo4j-rust-ext" %}
 {% set name = "neo4j-python-driver-rust-ext" %}
-{% set version = "5.28.1.0" %}
+{% set version = "5.28.2.0" %}
 
 {% set driver_target_version = ".".join(version.split(".")[:3]) %}
 {% set docs_version = ".".join(version.split(".")[:2]) %}
@@ -11,14 +11,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name | replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: cdc3ab18b1f6a292027c3774d67a8874c8cc3623e30a8a2eb1321231bee0966e
+  sha256: b73e9ccf3c6f939e03ad1f3aaccbd1306148234440a5d3b2503fb24118ed668a
 
 build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv --no-deps
   number: 0
-  skip: true                                 # [python_impl == 'pypy' or py < 37 or py > 312]
+  skip: true  # [python_impl == 'pypy' or py < 37 or py > 312]
 
 requirements:
   build:
@@ -35,7 +35,7 @@ requirements:
     - python
     - pip
     # Package originally wants maturin ~=1.6.0, but that's not available for windows on conda-forge
-    - maturin ~=1.7.0
+    - maturin ~=1.9.1
   run:
     - python
     - neo4j-python-driver =={{ driver_target_version }}
@@ -51,10 +51,11 @@ test:
 about:
   home: https://neo4j.com/
   summary: Rust Extensions for a Faster Neo4j Bolt Driver for Python
-  license: Apache-2.0
-  license_family: Apache
-  license_file: 
+  license: Apache-2.0 AND MIT
+  license_file:
     - LICENSE.txt
+    - LICENSE.MIT.txt
+    - LICENSE.APACHE2.txt
     - THIRDPARTY.yml
   doc_url: https://neo4j.com/docs/api/python-driver/{{ docs_version }}/
   dev_url: https://github.com/neo4j/neo4j-python-driver-rust-ext
