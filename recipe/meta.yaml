@@ -17,7 +17,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv --no-deps
-  number: 0
+  number: 1
   skip: true  # [python_impl == 'pypy' or py < 37 or py > 312]
 
 requirements:
