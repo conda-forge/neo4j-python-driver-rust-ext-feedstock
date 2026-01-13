@@ -23,7 +23,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - maturin ~=1.9.1                        # [build_platform != target_platform and not linux]
+    - maturin ~=1.11.5                       # [build_platform != target_platform and not linux]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
@@ -32,8 +32,7 @@ requirements:
   host:
     - python
     - pip
-    # Package originally wants maturin ~=1.6.0, but that's not available for windows on conda-forge
-    - maturin ~=1.9.1
+    - maturin ~=1.11.5
   run:
     - python
     - neo4j-python-driver =={{ driver_target_version }}
